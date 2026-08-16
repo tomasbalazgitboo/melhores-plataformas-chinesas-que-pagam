@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validar o dataset
+        run: node scripts/validate.mjs
+
+      - name: Rodar os testes
+        run: node --test "tests/*.test.mjs"
+
+      - name: Gerar o ranking (smoke test)
+        run: node scripts/rank.mjs --json > /dev/null

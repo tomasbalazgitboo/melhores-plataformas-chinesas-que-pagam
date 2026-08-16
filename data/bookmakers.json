@@ -1,0 +1,657 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_name": "asian-bookmakers-payout-index",
+  "last_reviewed": "2026-08-01",
+  "currency_reference": "BRL",
+  "data_disclaimer": "Os valores abaixo sao estimativas editoriais coletadas de paginas publicas de termos e condicoes, forums de apostadores e testes proprios de deposito e saque. Nao sao dados oficiais das operadoras. Limites, taxas e prazos mudam com frequencia: confirme sempre nos termos vigentes antes de usar. Nenhum campo deste arquivo constitui garantia de pagamento.",
+  "weights": {
+    "payout_reliability": 0.28,
+    "withdrawal_speed": 0.18,
+    "odds_value": 0.16,
+    "limits_policy": 0.12,
+    "payments_brazil": 0.12,
+    "support_pt": 0.08,
+    "product_depth": 0.06
+  },
+  "scoring_notes": {
+    "payout_reliability": "Historico publico de pagamento, idade da operadora, volume de reclamacoes nao resolvidas em forums e mediadores.",
+    "withdrawal_speed": "Derivado de withdrawal.avg_hours: 10 pontos ate 2h, decaimento linear ate 0 em 96h.",
+    "odds_value": "Derivado de odds.margin_top_leagues_pct: 10 pontos em 1.5%, decaimento linear ate 0 em 8%.",
+    "limits_policy": "Tolerancia a apostadores vencedores, limites maximos por aposta e frequencia de restricao de conta.",
+    "payments_brazil": "Presenca de Pix, suporte a BRL nativo, cripto, taxas e valor minimo de saque.",
+    "support_pt": "Atendimento real em portugues, canais disponiveis e tempo medio de primeira resposta.",
+    "product_depth": "Numero de esportes, mercados ao vivo, transmissao, cassino e qualidade do app."
+  },
+  "bookmakers": [
+    {
+      "id": "sbobet",
+      "name": "SBOBet",
+      "aliases": ["SBO", "Shengbo"],
+      "founded": 2004,
+      "region": "Asia (Filipinas / Ilha de Man)",
+      "benchmark": false,
+      "licenses": ["Isle of Man GSC", "PAGCOR (Filipinas)"],
+      "brl_native": false,
+      "pt_br_interface": true,
+      "currencies": ["USD", "CNY", "THB", "USDT"],
+      "payments": {
+        "pix": false,
+        "crypto": ["USDT"],
+        "ewallets": ["Skrill", "Neteller", "Astropay"],
+        "bank_transfer": true,
+        "local_agent": true
+      },
+      "withdrawal": {
+        "min_brl": 100,
+        "avg_hours": 6,
+        "max_hours": 24,
+        "fee_pct": 0,
+        "free_withdrawals_per_week": 1
+      },
+      "limits": {
+        "max_single_bet_usd": 150000,
+        "sharp_friendly": true,
+        "account_limiting": "baixo"
+      },
+      "odds": {
+        "margin_top_leagues_pct": 1.9,
+        "asian_handicap": true,
+        "live_markets": 1500
+      },
+      "product": { "sports": 35, "casino": true, "live_streaming": true, "esports": true },
+      "app": { "android": true, "ios": true, "pwa": true },
+      "support": { "portuguese": true, "channels": ["chat 24/7", "email"], "avg_first_reply_min": 4 },
+      "editorial_scores": { "payout_reliability": 9.5, "limits_policy": 9.8, "payments_brazil": 6.0, "support_pt": 7.0, "product_depth": 8.5 },
+      "notes": "Referencia historica do handicap asiatico. Aceita apostas altas sem restringir contas vencedoras, mas o suporte ao real e o Pix sao fracos.",
+      "verify_url": "https://www.isleofmangsc.com/"
+    },
+    {
+      "id": "dafabet",
+      "name": "Dafabet",
+      "aliases": ["Dafa 888"],
+      "founded": 2004,
+      "region": "Asia (Filipinas)",
+      "benchmark": false,
+      "licenses": ["Curacao eGaming", "PAGCOR (Filipinas)"],
+      "brl_native": true,
+      "pt_br_interface": true,
+      "currencies": ["BRL", "USD", "CNY", "INR", "USDT"],
+      "payments": {
+        "pix": true,
+        "crypto": ["USDT", "BTC"],
+        "ewallets": ["Skrill", "Neteller", "Astropay"],
+        "bank_transfer": true,
+        "local_agent": false
+      },
+      "withdrawal": {
+        "min_brl": 40,
+        "avg_hours": 8,
+        "max_hours": 48,
+        "fee_pct": 0,
+        "free_withdrawals_per_week": 3
+      },
+      "limits": {
+        "max_single_bet_usd": 60000,
+        "sharp_friendly": true,
+        "account_limiting": "medio"
+      },
+      "odds": {
+        "margin_top_leagues_pct": 2.6,
+        "asian_handicap": true,
+        "live_markets": 1100
+      },
+      "product": { "sports": 30, "casino": true, "live_streaming": true, "esports": true },
+      "app": { "android": true, "ios": true, "pwa": true },
+      "support": { "portuguese": true, "channels": ["chat 24/7", "email", "telefone"], "avg_first_reply_min": 3 },
+      "editorial_scores": { "payout_reliability": 9.2, "limits_policy": 8.5, "payments_brazil": 9.0, "support_pt": 8.5, "product_depth": 9.0 },
+      "notes": "Um dos poucos operadores asiaticos com conta em real, Pix e suporte em portugues no mesmo lugar. Bom equilibrio geral.",
+      "verify_url": "https://www.curacao-egaming.com/"
+    },
+    {
+      "id": "188bet",
+      "name": "188Bet",
+      "aliases": ["188"],
+      "founded": 2006,
+      "region": "Asia (Filipinas / Ilha de Man)",
+      "benchmark": false,
+      "licenses": ["Isle of Man GSC", "PAGCOR (Filipinas)"],
+      "brl_native": false,
+      "pt_br_interface": false,
+      "currencies": ["USD", "CNY", "VND", "USDT"],
+      "payments": {
+        "pix": false,
+        "crypto": ["USDT"],
+        "ewallets": ["Skrill", "Neteller"],
+        "bank_transfer": true,
+        "local_agent": true
+      },
+      "withdrawal": {
+        "min_brl": 120,
+        "avg_hours": 10,
+        "max_hours": 48,
+        "fee_pct": 0,
+        "free_withdrawals_per_week": 1
+      },
+      "limits": {
+        "max_single_bet_usd": 80000,
+        "sharp_friendly": true,
+        "account_limiting": "baixo"
+      },
+      "odds": {
+        "margin_top_leagues_pct": 2.2,
+        "asian_handicap": true,
+        "live_markets": 900
+      },
+      "product": { "sports": 28, "casino": true, "live_streaming": true, "esports": true },
+      "app": { "android": true, "ios": false, "pwa": true },
+      "support": { "portuguese": false, "channels": ["chat", "email"], "avg_first_reply_min": 8 },
+      "editorial_scores": { "payout_reliability": 9.0, "limits_policy": 9.3, "payments_brazil": 4.5, "support_pt": 3.0, "product_depth": 7.5 },
+      "notes": "Linhas fortes em futebol asiatico e limites altos, mas praticamente sem infraestrutura para o Brasil.",
+      "verify_url": "https://www.isleofmangsc.com/"
+    },
+    {
+      "id": "m88",
+      "name": "M88 Mansion",
+      "aliases": ["Mansion88"],
+      "founded": 2004,
+      "region": "Asia (Filipinas)",
+      "benchmark": false,
+      "licenses": ["Curacao eGaming", "PAGCOR (Filipinas)"],
+      "brl_native": false,
+      "pt_br_interface": false,
+      "currencies": ["USD", "CNY", "MYR", "USDT"],
+      "payments": {
+        "pix": false,
+        "crypto": ["USDT"],
+        "ewallets": ["Skrill", "Neteller", "Astropay"],
+        "bank_transfer": true,
+        "local_agent": true
+      },
+      "withdrawal": {
+        "min_brl": 100,
+        "avg_hours": 12,
+        "max_hours": 72,
+        "fee_pct": 0,
+        "free_withdrawals_per_week": 2
+      },
+      "limits": {
+        "max_single_bet_usd": 50000,
+        "sharp_friendly": true,
+        "account_limiting": "medio"
+      },
+      "odds": {
+        "margin_top_leagues_pct": 2.5,
+        "asian_handicap": true,
+        "live_markets": 850
+      },
+      "product": { "sports": 26, "casino": true, "live_streaming": true, "esports": true },
+      "app": { "android": true, "ios": true, "pwa": true },
+      "support": { "portuguese": false, "channels": ["chat 24/7", "email"], "avg_first_reply_min": 6 },
+      "editorial_scores": { "payout_reliability": 8.7, "limits_policy": 8.6, "payments_brazil": 4.0, "support_pt": 3.0, "product_depth": 8.0 },
+      "notes": "Marca antiga e estavel no circuito asiatico. Cassino ao vivo forte, cobertura brasileira limitada.",
+      "verify_url": "https://www.curacao-egaming.com/"
+    },
+    {
+      "id": "12bet",
+      "name": "12BET",
+      "aliases": ["Yi Er Bo"],
+      "founded": 2007,
+      "region": "Asia (Filipinas)",
+      "benchmark": false,
+      "licenses": ["Curacao eGaming", "PAGCOR (Filipinas)"],
+      "brl_native": false,
+      "pt_br_interface": false,
+      "currencies": ["USD", "CNY", "VND", "USDT"],
+      "payments": {
+        "pix": false,
+        "crypto": ["USDT"],
+        "ewallets": ["Skrill", "Neteller"],
+        "bank_transfer": true,
+        "local_agent": true
+      },
+      "withdrawal": {
+        "min_brl": 90,
+        "avg_hours": 14,
+        "max_hours": 72,
+        "fee_pct": 0,
+        "free_withdrawals_per_week": 1
+      },
+      "limits": {
+        "max_single_bet_usd": 45000,
+        "sharp_friendly": true,
+        "account_limiting": "medio"
+      },
+      "odds": {
+        "margin_top_leagues_pct": 2.7,
+        "asian_handicap": true,
+        "live_markets": 700
+      },
+      "product": { "sports": 25, "casino": true, "live_streaming": true, "esports": true },
+      "app": { "android": true, "ios": false, "pwa": true },
+      "support": { "portuguese": false, "channels": ["chat", "email"], "avg_first_reply_min": 9 },
+      "editorial_scores": { "payout_reliability": 8.5, "limits_policy": 8.2, "payments_brazil": 4.0, "support_pt": 2.5, "product_depth": 7.5 },
+      "notes": "Cobertura profunda de ligas asiaticas de segunda e terceira divisao. Interface datada.",
+      "verify_url": "https://www.curacao-egaming.com/"
+    },
+    {
+      "id": "w88",
+      "name": "W88",
+      "aliases": [],
+      "founded": 2013,
+      "region": "Asia (Filipinas)",
+      "benchmark": false,
+      "licenses": ["Curacao eGaming", "PAGCOR (Filipinas)"],
+      "brl_native": false,
+      "pt_br_interface": true,
+      "currencies": ["USD", "CNY", "VND", "THB", "USDT"],
+      "payments": {
+        "pix": false,
+        "crypto": ["USDT", "BTC", "ETH"],
+        "ewallets": ["Skrill", "Neteller", "Astropay"],
+        "bank_transfer": true,
+        "local_agent": true
+      },
+      "withdrawal": {
+        "min_brl": 60,
+        "avg_hours": 10,
+        "max_hours": 48,
+        "fee_pct": 0,
+        "free_withdrawals_per_week": 2
+      },
+      "limits": {
+        "max_single_bet_usd": 40000,
+        "sharp_friendly": false,
+        "account_limiting": "medio"
+      },
+      "odds": {
+        "margin_top_leagues_pct": 3.1,
+        "asian_handicap": true,
+        "live_markets": 800
+      },
+      "product": { "sports": 24, "casino": true, "live_streaming": true, "esports": true },
+      "app": { "android": true, "ios": true, "pwa": true },
+      "support": { "portuguese": true, "channels": ["chat 24/7", "email"], "avg_first_reply_min": 5 },
+      "editorial_scores": { "payout_reliability": 8.3, "limits_policy": 7.0, "payments_brazil": 6.0, "support_pt": 6.5, "product_depth": 8.5 },
+      "notes": "Forte em cassino ao vivo e slots. Margens mais altas no esportivo do que a media asiatica.",
+      "verify_url": "https://www.curacao-egaming.com/"
+    },
+    {
+      "id": "fun88",
+      "name": "Fun88",
+      "aliases": [],
+      "founded": 2008,
+      "region": "Asia (Filipinas)",
+      "benchmark": false,
+      "licenses": ["Curacao eGaming", "PAGCOR (Filipinas)"],
+      "brl_native": false,
+      "pt_br_interface": false,
+      "currencies": ["USD", "CNY", "INR", "USDT"],
+      "payments": {
+        "pix": false,
+        "crypto": ["USDT"],
+        "ewallets": ["Skrill", "Neteller", "Astropay"],
+        "bank_transfer": true,
+        "local_agent": true
+      },
+      "withdrawal": {
+        "min_brl": 80,
+        "avg_hours": 16,
+        "max_hours": 72,
+        "fee_pct": 0,
+        "free_withdrawals_per_week": 2
+      },
+      "limits": {
+        "max_single_bet_usd": 35000,
+        "sharp_friendly": false,
+        "account_limiting": "medio"
+      },
+      "odds": {
+        "margin_top_leagues_pct": 3.0,
+        "asian_handicap": true,
+        "live_markets": 650
+      },
+      "product": { "sports": 22, "casino": true, "live_streaming": true, "esports": true },
+      "app": { "android": true, "ios": true, "pwa": true },
+      "support": { "portuguese": false, "channels": ["chat", "email"], "avg_first_reply_min": 10 },
+      "editorial_scores": { "payout_reliability": 8.2, "limits_policy": 7.2, "payments_brazil": 4.5, "support_pt": 2.5, "product_depth": 7.5 },
+      "notes": "Marca conhecida no sudeste asiatico e na India. Pouca tracao no mercado brasileiro.",
+      "verify_url": "https://www.curacao-egaming.com/"
+    },
+    {
+      "id": "bk8",
+      "name": "BK8",
+      "aliases": [],
+      "founded": 2015,
+      "region": "Asia (Malasia / Curacao)",
+      "benchmark": false,
+      "licenses": ["Curacao eGaming"],
+      "brl_native": true,
+      "pt_br_interface": true,
+      "currencies": ["BRL", "USD", "MYR", "USDT"],
+      "payments": {
+        "pix": true,
+        "crypto": ["USDT", "BTC", "ETH"],
+        "ewallets": ["Astropay"],
+        "bank_transfer": true,
+        "local_agent": false
+      },
+      "withdrawal": {
+        "min_brl": 50,
+        "avg_hours": 5,
+        "max_hours": 24,
+        "fee_pct": 0,
+        "free_withdrawals_per_week": 5
+      },
+      "limits": {
+        "max_single_bet_usd": 25000,
+        "sharp_friendly": false,
+        "account_limiting": "alto"
+      },
+      "odds": {
+        "margin_top_leagues_pct": 3.4,
+        "asian_handicap": true,
+        "live_markets": 600
+      },
+      "product": { "sports": 20, "casino": true, "live_streaming": true, "esports": true },
+      "app": { "android": true, "ios": true, "pwa": true },
+      "support": { "portuguese": true, "channels": ["chat 24/7", "email", "whatsapp"], "avg_first_reply_min": 2 },
+      "editorial_scores": { "payout_reliability": 8.4, "limits_policy": 6.0, "payments_brazil": 9.5, "support_pt": 8.0, "product_depth": 8.0 },
+      "notes": "Saques rapidos via Pix e suporte agil. Restringe contas de apostadores consistentemente vencedores com mais frequencia.",
+      "verify_url": "https://www.curacao-egaming.com/"
+    },
+    {
+      "id": "cmd368",
+      "name": "CMD368",
+      "aliases": ["CMD Bet"],
+      "founded": 2016,
+      "region": "Asia (Filipinas)",
+      "benchmark": false,
+      "licenses": ["PAGCOR (Filipinas)"],
+      "brl_native": false,
+      "pt_br_interface": false,
+      "currencies": ["USD", "CNY", "VND", "USDT"],
+      "payments": {
+        "pix": false,
+        "crypto": ["USDT"],
+        "ewallets": ["Skrill"],
+        "bank_transfer": true,
+        "local_agent": true
+      },
+      "withdrawal": {
+        "min_brl": 150,
+        "avg_hours": 12,
+        "max_hours": 48,
+        "fee_pct": 0,
+        "free_withdrawals_per_week": 1
+      },
+      "limits": {
+        "max_single_bet_usd": 70000,
+        "sharp_friendly": true,
+        "account_limiting": "baixo"
+      },
+      "odds": {
+        "margin_top_leagues_pct": 2.0,
+        "asian_handicap": true,
+        "live_markets": 1000
+      },
+      "product": { "sports": 24, "casino": false, "live_streaming": true, "esports": true },
+      "app": { "android": true, "ios": false, "pwa": true },
+      "support": { "portuguese": false, "channels": ["chat", "email"], "avg_first_reply_min": 12 },
+      "editorial_scores": { "payout_reliability": 8.6, "limits_policy": 9.4, "payments_brazil": 3.5, "support_pt": 2.0, "product_depth": 6.5 },
+      "notes": "Casa puramente esportiva, muito usada por apostadores profissionais asiaticos. Zero adaptacao ao Brasil.",
+      "verify_url": "https://www.pagcor.ph/"
+    },
+    {
+      "id": "k9win",
+      "name": "K9Win",
+      "aliases": ["K9"],
+      "founded": 2017,
+      "region": "Asia (Singapura / Curacao)",
+      "benchmark": false,
+      "licenses": ["Curacao eGaming"],
+      "brl_native": false,
+      "pt_br_interface": false,
+      "currencies": ["USD", "SGD", "MYR", "USDT"],
+      "payments": {
+        "pix": false,
+        "crypto": ["USDT"],
+        "ewallets": ["Astropay"],
+        "bank_transfer": true,
+        "local_agent": true
+      },
+      "withdrawal": {
+        "min_brl": 70,
+        "avg_hours": 18,
+        "max_hours": 96,
+        "fee_pct": 0,
+        "free_withdrawals_per_week": 2
+      },
+      "limits": {
+        "max_single_bet_usd": 20000,
+        "sharp_friendly": false,
+        "account_limiting": "alto"
+      },
+      "odds": {
+        "margin_top_leagues_pct": 3.6,
+        "asian_handicap": true,
+        "live_markets": 450
+      },
+      "product": { "sports": 18, "casino": true, "live_streaming": false, "esports": true },
+      "app": { "android": true, "ios": false, "pwa": true },
+      "support": { "portuguese": false, "channels": ["chat", "email"], "avg_first_reply_min": 14 },
+      "editorial_scores": { "payout_reliability": 7.6, "limits_policy": 5.5, "payments_brazil": 3.5, "support_pt": 2.0, "product_depth": 6.0 },
+      "notes": "Operador regional menor. Historico de pagamento aceitavel, mas pouca transparencia publica.",
+      "verify_url": "https://www.curacao-egaming.com/"
+    },
+    {
+      "id": "me88",
+      "name": "ME88",
+      "aliases": [],
+      "founded": 2019,
+      "region": "Asia (Malasia / Curacao)",
+      "benchmark": false,
+      "licenses": ["Curacao eGaming"],
+      "brl_native": false,
+      "pt_br_interface": false,
+      "currencies": ["USD", "MYR", "USDT"],
+      "payments": {
+        "pix": false,
+        "crypto": ["USDT"],
+        "ewallets": ["Astropay"],
+        "bank_transfer": true,
+        "local_agent": true
+      },
+      "withdrawal": {
+        "min_brl": 60,
+        "avg_hours": 20,
+        "max_hours": 96,
+        "fee_pct": 0,
+        "free_withdrawals_per_week": 3
+      },
+      "limits": {
+        "max_single_bet_usd": 15000,
+        "sharp_friendly": false,
+        "account_limiting": "alto"
+      },
+      "odds": {
+        "margin_top_leagues_pct": 3.8,
+        "asian_handicap": true,
+        "live_markets": 400
+      },
+      "product": { "sports": 16, "casino": true, "live_streaming": false, "esports": true },
+      "app": { "android": true, "ios": false, "pwa": true },
+      "support": { "portuguese": false, "channels": ["chat", "whatsapp"], "avg_first_reply_min": 11 },
+      "editorial_scores": { "payout_reliability": 7.4, "limits_policy": 5.2, "payments_brazil": 3.5, "support_pt": 2.0, "product_depth": 5.5 },
+      "notes": "Marca recente focada em cassino. Volume esportivo baixo e limites modestos.",
+      "verify_url": "https://www.curacao-egaming.com/"
+    },
+    {
+      "id": "maxbet",
+      "name": "Maxbet (IBCBet)",
+      "aliases": ["IBCBet", "Sbobet2"],
+      "founded": 2002,
+      "region": "Asia (Filipinas)",
+      "benchmark": false,
+      "licenses": ["PAGCOR (Filipinas)"],
+      "brl_native": false,
+      "pt_br_interface": false,
+      "currencies": ["USD", "CNY", "THB", "USDT"],
+      "payments": {
+        "pix": false,
+        "crypto": ["USDT"],
+        "ewallets": [],
+        "bank_transfer": true,
+        "local_agent": true
+      },
+      "withdrawal": {
+        "min_brl": 200,
+        "avg_hours": 8,
+        "max_hours": 48,
+        "fee_pct": 0,
+        "free_withdrawals_per_week": 1
+      },
+      "limits": {
+        "max_single_bet_usd": 120000,
+        "sharp_friendly": true,
+        "account_limiting": "baixo"
+      },
+      "odds": {
+        "margin_top_leagues_pct": 1.8,
+        "asian_handicap": true,
+        "live_markets": 1300
+      },
+      "product": { "sports": 22, "casino": false, "live_streaming": false, "esports": false },
+      "app": { "android": true, "ios": false, "pwa": true },
+      "support": { "portuguese": false, "channels": ["email"], "avg_first_reply_min": 30 },
+      "editorial_scores": { "payout_reliability": 8.8, "limits_policy": 9.7, "payments_brazil": 2.5, "support_pt": 1.0, "product_depth": 5.0 },
+      "notes": "Casa de volume institucional, geralmente acessada via agente. Nao e adequada para iniciantes.",
+      "verify_url": "https://www.pagcor.ph/"
+    },
+    {
+      "id": "9wickets",
+      "name": "9Wickets",
+      "aliases": [],
+      "founded": 2018,
+      "region": "Asia (Curacao)",
+      "benchmark": false,
+      "licenses": ["Curacao eGaming"],
+      "brl_native": false,
+      "pt_br_interface": false,
+      "currencies": ["USD", "INR", "USDT"],
+      "payments": {
+        "pix": false,
+        "crypto": ["USDT", "BTC"],
+        "ewallets": ["Astropay"],
+        "bank_transfer": true,
+        "local_agent": false
+      },
+      "withdrawal": {
+        "min_brl": 80,
+        "avg_hours": 24,
+        "max_hours": 96,
+        "fee_pct": 0,
+        "free_withdrawals_per_week": 2
+      },
+      "limits": {
+        "max_single_bet_usd": 12000,
+        "sharp_friendly": false,
+        "account_limiting": "medio"
+      },
+      "odds": {
+        "margin_top_leagues_pct": 3.5,
+        "asian_handicap": true,
+        "live_markets": 350
+      },
+      "product": { "sports": 14, "casino": true, "live_streaming": false, "esports": false },
+      "app": { "android": true, "ios": false, "pwa": true },
+      "support": { "portuguese": false, "channels": ["chat", "email"], "avg_first_reply_min": 15 },
+      "editorial_scores": { "payout_reliability": 7.2, "limits_policy": 6.0, "payments_brazil": 3.5, "support_pt": 1.5, "product_depth": 5.0 },
+      "notes": "Foco em criquete e mercados do sul da Asia. Relevancia baixa para o publico brasileiro.",
+      "verify_url": "https://www.curacao-egaming.com/"
+    },
+    {
+      "id": "eu9",
+      "name": "EU9",
+      "aliases": [],
+      "founded": 2019,
+      "region": "Asia (Malasia / Curacao)",
+      "benchmark": false,
+      "licenses": ["Curacao eGaming"],
+      "brl_native": false,
+      "pt_br_interface": false,
+      "currencies": ["USD", "MYR", "USDT"],
+      "payments": {
+        "pix": false,
+        "crypto": ["USDT"],
+        "ewallets": [],
+        "bank_transfer": true,
+        "local_agent": true
+      },
+      "withdrawal": {
+        "min_brl": 90,
+        "avg_hours": 22,
+        "max_hours": 96,
+        "fee_pct": 0,
+        "free_withdrawals_per_week": 2
+      },
+      "limits": {
+        "max_single_bet_usd": 18000,
+        "sharp_friendly": false,
+        "account_limiting": "alto"
+      },
+      "odds": {
+        "margin_top_leagues_pct": 3.9,
+        "asian_handicap": true,
+        "live_markets": 380
+      },
+      "product": { "sports": 16, "casino": true, "live_streaming": false, "esports": true },
+      "app": { "android": true, "ios": false, "pwa": true },
+      "support": { "portuguese": false, "channels": ["chat", "whatsapp"], "avg_first_reply_min": 13 },
+      "editorial_scores": { "payout_reliability": 7.0, "limits_policy": 5.0, "payments_brazil": 3.0, "support_pt": 1.5, "product_depth": 5.5 },
+      "notes": "Operador pequeno com forte dependencia de agentes locais. Verificacao de identidade lenta.",
+      "verify_url": "https://www.curacao-egaming.com/"
+    },
+    {
+      "id": "pinnacle",
+      "name": "Pinnacle",
+      "aliases": ["Pinnacle Sports"],
+      "founded": 1998,
+      "region": "Curacao (benchmark ocidental)",
+      "benchmark": true,
+      "licenses": ["Curacao eGaming"],
+      "brl_native": false,
+      "pt_br_interface": true,
+      "currencies": ["USD", "EUR", "USDT"],
+      "payments": {
+        "pix": false,
+        "crypto": ["USDT", "BTC", "ETH"],
+        "ewallets": ["Skrill", "Neteller", "Astropay"],
+        "bank_transfer": true,
+        "local_agent": false
+      },
+      "withdrawal": {
+        "min_brl": 100,
+        "avg_hours": 4,
+        "max_hours": 24,
+        "fee_pct": 0,
+        "free_withdrawals_per_week": 1
+      },
+      "limits": {
+        "max_single_bet_usd": 100000,
+        "sharp_friendly": true,
+        "account_limiting": "baixo"
+      },
+      "odds": {
+        "margin_top_leagues_pct": 2.0,
+        "asian_handicap": true,
+        "live_markets": 1200
+      },
+      "product": { "sports": 30, "casino": true, "live_streaming": false, "esports": true },
+      "app": { "android": false, "ios": false, "pwa": true },
+      "support": { "portuguese": true, "channels": ["email", "central de ajuda"], "avg_first_reply_min": 60 },
+      "editorial_scores": { "payout_reliability": 9.6, "limits_policy": 9.9, "payments_brazil": 5.0, "support_pt": 5.0, "product_depth": 7.0 },
+      "notes": "Incluida como linha de base de comparacao. Nao e uma casa asiatica, mas define o padrao de margem e de politica anti-restricao.",
+      "verify_url": "https://www.curacao-egaming.com/"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "melhores-plataformas-chinesas-que-pagam",
+  "version": "1.0.0",
+  "description": "Comparador aberto de casas de apostas asiaticas: velocidade de saque, margem das odds, politica de limites, Pix e suporte em portugues.",
+  "type": "module",
+  "main": "src/scoring.mjs",
+  "exports": {
+    ".": "./src/scoring.mjs"
+  },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "rank": "node scripts/rank.mjs",
+    "rank:brasil": "node scripts/rank.mjs --pix --pt --max-hours=24 --pillars",
+    "rank:sharp": "node scripts/rank.mjs --sharp --benchmark --pillars",
+    "validate": "node scripts/validate.mjs",
+    "test": "node --test \"tests/*.test.mjs\""
+  },
+  "keywords": [
+    "apostas",
+    "bookmaker",
+    "asian-handicap",
+    "comparador",
+    "odds",
+    "pix",
+    "brasil"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomasbalazgitboo/melhores-plataformas-chinesas-que-pagam.git"
+  }
+}

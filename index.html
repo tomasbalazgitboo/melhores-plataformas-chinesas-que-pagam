@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Comparador de casas de apostas asiaticas 2026</title>
+    <meta
+      name="description"
+      content="Comparador aberto de casas de apostas asiaticas: velocidade de saque, margem das odds, politica de limites, Pix e suporte em portugues."
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <h1>Comparador de casas de apostas asiaticas</h1>
+        <p class="sub">
+          Dados abertos, pontuacao transparente, sem ranking pago. Ultima revisao do dataset:
+          <strong id="last-reviewed">carregando</strong>.
+        </p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="panel" aria-labelledby="filtros-title">
+        <h2 id="filtros-title">Filtros</h2>
+        <div class="filters">
+          <label class="field">
+            <span>Buscar</span>
+            <input type="search" id="f-search" placeholder="nome, apelido ou regiao" />
+          </label>
+
+          <label class="field">
+            <span>Saque medio maximo</span>
+            <select id="f-hours">
+              <option value="">qualquer</option>
+              <option value="6">ate 6 horas</option>
+              <option value="12">ate 12 horas</option>
+              <option value="24">ate 24 horas</option>
+              <option value="48">ate 48 horas</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Nota minima</span>
+            <select id="f-score">
+              <option value="">qualquer</option>
+              <option value="6">6.0</option>
+              <option value="7">7.0</option>
+              <option value="8">8.0</option>
+              <option value="8.5">8.5</option>
+            </select>
+          </label>
+
+          <fieldset class="toggles">
+            <legend>Requisitos</legend>
+            <label><input type="checkbox" id="f-pix" /> Pix</label>
+            <label><input type="checkbox" id="f-brl" /> Conta em real</label>
+            <label><input type="checkbox" id="f-pt" /> Interface em portugues</label>
+            <label><input type="checkbox" id="f-crypto" /> Cripto</label>
+            <label><input type="checkbox" id="f-sharp" /> Nao restringe vencedores</label>
+            <label><input type="checkbox" id="f-benchmark" /> Incluir linha de base ocidental</label>
+          </fieldset>
+        </div>
+
+        <details class="weights">
+          <summary>Ajustar os pesos do ranking</summary>
+          <p class="hint">
+            Mude os pesos e o ranking recalcula na hora. E assim que voce descobre qual casa serve ao
+            <em>seu</em> perfil, e nao ao perfil medio.
+          </p>
+          <div id="weight-sliders" class="weight-grid"></div>
+          <button type="button" id="reset-weights" class="btn-secondary">Restaurar pesos padrao</button>
+        </details>
+      </section>
+
+      <section class="panel" aria-labelledby="ranking-title">
+        <h2 id="ranking-title">Ranking <span id="count" class="count"></span></h2>
+        <div class="table-scroll">
+          <table id="ranking">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Casa</th>
+                <th scope="col">Nota</th>
+                <th scope="col">Saque medio</th>
+                <th scope="col">Margem</th>
+                <th scope="col">Pix</th>
+                <th scope="col">Portugues</th>
+                <th scope="col">Licencas</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <p id="empty" class="empty" hidden>Nenhuma casa atende a todos os filtros selecionados.</p>
+      </section>
+
+      <section class="panel" aria-labelledby="h2h-title">
+        <h2 id="h2h-title">Comparacao direta</h2>
+        <div class="h2h-controls">
+          <label class="field"><span>Casa A</span><select id="h2h-a"></select></label>
+          <label class="field"><span>Casa B</span><select id="h2h-b"></select></label>
+        </div>
+        <div class="table-scroll">
+          <table id="h2h">
+            <thead>
+              <tr>
+                <th scope="col">Pilar</th>
+                <th scope="col" id="h2h-name-a">A</th>
+                <th scope="col" id="h2h-name-b">B</th>
+                <th scope="col">Vencedor</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel disclaimer" aria-labelledby="aviso-title">
+        <h2 id="aviso-title">Aviso importante</h2>
+        <p id="dataset-disclaimer">carregando</p>
+        <p>
+          Apostas envolvem risco real de perda financeira. Nenhuma casa, nota ou metodologia garante retorno.
+          Aposte apenas valores que voce pode perder por completo.
+        </p>
+        <p>
+          <strong>Proibido para menores de 18 anos.</strong> Se o jogo deixou de ser diversao, procure ajuda:
+          <a href="https://www.cvv.org.br/" rel="noopener noreferrer external" target="_blank">CVV, telefone 188</a>
+          ou <a href="https://www.jogadoresanonimos.com.br/" rel="noopener noreferrer external" target="_blank">Jogadores Anonimos</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>
+          Contexto e leitura complementar:
+          <a href="https://pt.wikipedia.org/wiki/Apostas_esportivas" rel="noopener noreferrer external" target="_blank">Apostas esportivas (Wikipedia)</a>,
+          <a href="https://en.wikipedia.org/wiki/Asian_handicap" rel="noopener noreferrer external" target="_blank">Asian handicap (Wikipedia)</a>,
+          <a href="https://en.wikipedia.org/wiki/Gambling_in_China" rel="noopener noreferrer external" target="_blank">Gambling in China (Wikipedia)</a>.
+        </p>
+        <p>
+          Analises em portugues sobre plataformas asiaticas:
+          <a href="https://plataformachinesa.com.br/" rel="noopener noreferrer external" target="_blank">plataformachinesa.com.br</a>.
+        </p>
+        <p class="small">Projeto de codigo aberto, licenca MIT. Conteudo informativo, nao e aconselhamento financeiro.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="assets/app.js"></script>
+  </body>
+</html>
