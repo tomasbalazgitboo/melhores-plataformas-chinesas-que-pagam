@@ -2,6 +2,8 @@
 
 Comparador de código aberto das plataformas asiáticas de apostas esportivas, com foco em um único critério que a maioria dos rankings evita medir: **elas pagam?**
 
+**Comparador online, sem instalar nada:** [tomasbalazgitboo.github.io/melhores-plataformas-chinesas-que-pagam](https://tomasbalazgitboo.github.io/melhores-plataformas-chinesas-que-pagam/)
+
 Este repositório contém duas coisas. A primeira é um software simples, sem dependências, que pontua e compara casas de apostas asiáticas a partir de um conjunto de dados aberto e auditável. A segunda é esta documentação, que explica em detalhe o método, o contexto regulatório e o que um apostador brasileiro precisa saber antes de depositar um real em qualquer plataforma sediada na Ásia.
 
 Nada aqui é promessa de lucro. Apostar é uma atividade de risco em que a perda é o resultado mais provável no longo prazo para a maioria das pessoas. O objetivo deste projeto é reduzir um risco específico e evitável: o de escolher uma casa que simplesmente não devolve o dinheiro.
